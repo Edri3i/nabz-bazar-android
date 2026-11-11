@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="w_bg">#FFFFFFFF</color>
+    <color name="w_ink">#0B0B0C</color>
+    <color name="w_ink2">#6D6D75</color>
+    <color name="w_ink3">#A6A6AE</color>
+    <color name="w_chip">#F1F1F3</color>
+    <color name="w_btn">#0B0B0C</color>
+    <color name="w_btnink">#FFFFFF</color>
+    <color name="w_up">#15A34A</color>
+    <color name="w_dn">#E5484D</color>
+    <color name="w_upbg">#E6F6EC</color>
+    <color name="w_dnbg">#FDECEC</color>
+    <string name="w_desc">قیمت تتر، دلار، طلا، کریپتو، پول هوشمند، خبر بعدی و اسکنر؛ ورق بزن</string>
+    <string name="w_name_stack">نبض بازار · ورق با کشیدن</string>
+    <string name="w_name_flip">نبض بازار · تک‌کارت</string>
+    <string name="w_empty">اپ نبض بازار رو یه بار باز کن تا ویجت پر بشه</string>
+</resources>

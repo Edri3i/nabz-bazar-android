@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="w_bg">#FF161618</color>
+    <color name="w_ink">#F5F5F7</color>
+    <color name="w_ink2">#9C9CA4</color>
+    <color name="w_ink3">#5C5C64</color>
+    <color name="w_chip">#232326</color>
+    <color name="w_btn">#F5F5F7</color>
+    <color name="w_btnink">#0B0B0C</color>
+    <color name="w_up">#30D158</color>
+    <color name="w_dn">#FF5C61</color>
+    <color name="w_upbg">#2430D158</color>
+    <color name="w_dnbg">#26FF5C61</color>
+</resources>

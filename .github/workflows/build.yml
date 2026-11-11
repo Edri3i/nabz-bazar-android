@@ -1,0 +1,39 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Optional: sign the release APK with your own key.
+      # Add two repository secrets: KEYSTORE_BASE64 (base64 of the .keystore file) and KEYSTORE_PASSWORD.
+      - name: Signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > nabz.keystore
+            printf "storeFile=nabz.keystore\nstorePassword=%s\nkeyAlias=nabz\nkeyPassword=%s\n" "$KEYSTORE_PASSWORD" "$KEYSTORE_PASSWORD" > keystore.properties
+          fi
+
+      - name: Build
+        run: chmod +x gradlew && ./gradlew assembleRelease assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nabz-bazar-apk
+          path: app/build/outputs/apk/**/*.apk
